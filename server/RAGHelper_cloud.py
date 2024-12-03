@@ -63,6 +63,7 @@ class RAGHelperCloud(RAGHelper):
         if os.getenv("use_ollama") == "True":
             self.logger.info("Initializing Ollama conversation.")
             return OllamaLLM(model=os.getenv("ollama_model"))
+            
 
         self.logger.error("No valid LLM configuration found.")
         raise ValueError("No valid LLM configuration found.")
